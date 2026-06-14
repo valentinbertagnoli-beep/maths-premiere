@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentin·Maths — Première spé maths · Cours complet</title>
+<meta name="description" content="Cours complet de première spécialité mathématiques : définitions, théorèmes, exemples rédigés, méthodes, exercices corrigés et conseils.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+<link rel="apple-touch-icon" href="logo-icon-180.png">
+<meta name="theme-color" content="#2B50C8">
+</head>
+<body>
+
+  <!-- ================= BARRE DU HAUT ================= -->
+  <header class="topbar">
+    <a class="brand" href="#accueil">
+      <img src="logo-icon.svg" alt="" width="36" height="36">
+      Valentin<span>·Maths</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu" aria-label="Sommaire du cours">
+      <ul>
+        <li><a href="#accueil" data-page="accueil"><span class="num-ch">🏠</span>Accueil</a></li>
+        <li class="sep">Analyse</li>
+        <li><a href="#ch1" data-page="ch1"><span class="num-ch">1.</span>Suites numériques</a></li>
+        <li><a href="#ch2" data-page="ch2"><span class="num-ch">2.</span>Le second degré</a></li>
+        <li><a href="#ch3" data-page="ch3"><span class="num-ch">3.</span>Dérivation</a></li>
+        <li><a href="#ch4" data-page="ch4"><span class="num-ch">4.</span>Applications de la dérivée</a></li>
+        <li><a href="#ch5" data-page="ch5"><span class="num-ch">5.</span>Fonction exponentielle</a></li>
+        <li><a href="#ch6" data-page="ch6"><span class="num-ch">6.</span>Fonctions trigonométriques</a></li>
+        <li class="sep">Géométrie</li>
+        <li><a href="#ch7" data-page="ch7"><span class="num-ch">7.</span>Produit scalaire</a></li>
+        <li><a href="#ch8" data-page="ch8"><span class="num-ch">8.</span>Géométrie repérée</a></li>
+        <li class="sep">Probabilités</li>
+        <li><a href="#ch9" data-page="ch9"><span class="num-ch">9.</span>Probabilités conditionnelles</a></li>
+        <li><a href="#ch10" data-page="ch10"><span class="num-ch">10.</span>Variables aléatoires</a></li>
+        <li class="sep">Méthode</li>
+        <li><a href="#conseils" data-page="conseils"><span class="num-ch">💡</span>Conseils</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- ================= CONTENU ================= -->
+  <div class="content">
+
+  <!-- ╔══════════ ACCUEIL ══════════╗ -->
+  <main class="page" id="page-accueil">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Cours complet · Première spé maths</span>
+        <h1>Ton année de première, <span class="hl">chapitre par chapitre.</span></h1>
+        <p class="sub">
+          Ce support reprend l'intégralité du programme de spécialité sous forme
+          de vrai cours : définitions, théorèmes, exemples rédigés, méthodes,
+          exercices corrigés. Il fonctionne sans internet — garde-le sur ton
+          ordinateur et reviens-y avant chaque DS, et pour préparer le terrain
+          de la terminale.
+        </p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+        <h2 style="font-size:1.3rem;font-weight:800">Comment travailler avec ce cours ?</h2>
+        <span class="hand" style="font-size:1.25rem;color:var(--bic)">↳ chaque chapitre suit la même logique, repère les couleurs !</span>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Les blocs bleus posent le vocabulaire et les objets du chapitre. À connaître mot pour mot : une définition mal sue, c'est un exercice qu'on ne peut pas démarrer.</p>
+        </div>
+        <div class="blk theoreme"><span class="blk-label">Théorème · Propriété</span>
+          <p>Les blocs rouges sont les résultats du cours, ceux que tu cites sur ta copie. Apprends leurs <em>hypothèses</em> autant que leur conclusion.</p>
+        </div>
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p>Les blocs encadrés montrent un exemple traité comme sur une vraie copie. C'est ton modèle de rédaction.</p>
+        </div>
+        <div class="blk methode"><span class="blk-label">Méthode</span>
+          <p>Les blocs verts donnent la marche à suivre, étape par étape, pour les questions types.</p>
+        </div>
+        <div class="blk remarque"><span class="blk-label">Remarque</span>
+          <p>Les blocs jaunes signalent les pièges, les cas particuliers et les erreurs classiques.</p>
+        </div>
+
+        <div class="astuce" style="margin-top:26px">
+          <strong>Mode d'emploi des exercices :</strong> fais chaque exercice
+          <em>au brouillon sans regarder la solution</em>, puis déplie la correction
+          et compare avec ta rédaction. C'est la comparaison qui fait progresser,
+          pas la lecture !
+        </div>
+
+        <div class="niveaux-grid" style="margin-top:30px">
+          <button class="niveau-card" data-goto="ch1">
+            <span class="num">▶</span>
+            <h3>Commencer le cours</h3>
+            <p>Chapitre 1 — Suites numériques : le premier grand thème de l'analyse au lycée.</p>
+            <span class="go">C'est parti →</span>
+          </button>
+          <button class="niveau-card" data-goto="conseils">
+            <span class="num">💡</span>
+            <h3>Conseils de méthode</h3>
+            <p>Comment travailler, gérer un DS et éviter les erreurs classiques de première.</p>
+            <span class="go">Lire les conseils →</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 1 ══════════╗ -->
+  <main class="page" id="page-ch1">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 1 · Analyse</span>
+        <h1>Suites <span class="hl">numériques</span></h1>
+        <p class="sub">Une suite, c'est une liste ordonnée de nombres. Savoir les générer, reconnaître leur nature et calculer un terme lointain : le socle de toute l'analyse.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Généralités</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Une <strong>suite</strong> (u&#8345;) associe à chaque entier n un nombre u&#8345; (le terme de rang n). On peut la définir de deux façons :</p>
+          <ul>
+            <li><strong>Explicite :</strong> u&#8345; = f(n), on calcule directement (ex. u&#8345; = 2n + 1).</li>
+            <li><strong>Par récurrence :</strong> on donne le premier terme et une relation u&#8345;&#8330;&#8321; = f(u&#8345;) reliant un terme au suivant.</li>
+          </ul>
+        </div>
+
+        <div class="blk methode"><span class="blk-label">Méthode · Étudier le sens de variation</span>
+          <p>Étudier le <strong>signe de u&#8345;&#8330;&#8321; − u&#8345;</strong> : positif ⟹ croissante, négatif ⟹ décroissante. Pour une suite à termes strictement positifs, on peut comparer le quotient u&#8345;&#8330;&#8321;/u&#8345; à 1.</p>
+        </div>
+
+        <h3 class="sous-titre">II — Suites arithmétiques</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>(u&#8345;) est <strong>arithmétique de raison r</strong> si on passe d'un terme au suivant en <em>ajoutant</em> toujours r : u&#8345;&#8330;&#8321; = u&#8345; + r.</p>
+        </div>
+
+        <div class="blk theoreme"><span class="blk-label">Terme général &amp; somme</span>
+          <p class="formule">u&#8345; = u&#8320; + n·r &nbsp;&nbsp;(ou u&#8345; = u&#8345;&#8346; + (n − p)·r)</p>
+          <p>Sens de variation : croissante si r &gt; 0, décroissante si r &lt; 0.</p>
+          <p>Somme des premiers entiers : 1 + 2 + ⋯ + n = n(n + 1)/2.</p>
+        </div>
+
+        <h3 class="sous-titre">III — Suites géométriques</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>(u&#8345;) est <strong>géométrique de raison q</strong> si on passe d'un terme au suivant en <em>multipliant</em> toujours par q : u&#8345;&#8330;&#8321; = q·u&#8345;.</p>
+        </div>
+
+        <div class="blk theoreme"><span class="blk-label">Terme général &amp; somme</span>
+          <p class="formule">u&#8345; = u&#8320; · qⁿ</p>
+          <p>Somme (pour q ≠ 1) : 1 + q + q² + ⋯ + qⁿ = (1 − qⁿ⁺¹)/(1 − q).</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>(u&#8345;) est géométrique de premier terme u&#8320; = 5 et de raison q = 2. Calculer u&#8326; et la somme u&#8320; + u&#8321; + ⋯ + u&#8326;.</em></p>
+          <p>u&#8326; = 5 × 2⁶ = 5 × 64 = <strong>320</strong>.</p>
+          <p>Somme = 5 × (1 + 2 + ⋯ + 2⁶) = 5 × (1 − 2⁷)/(1 − 2) = 5 × (−127)/(−1) = <strong>635</strong>. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque · Reconnaître la nature</span>
+          <p>Calcule u&#8321; − u&#8320; et u&#8322; − u&#8321; : différence constante ⟹ arithmétique. Sinon, calcule u&#8321;/u&#8320; et u&#8322;/u&#8321; : quotient constant ⟹ géométrique.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>(u&#8345;) arithmétique, u&#8320; = 3 et r = 5. Calculer u&#8321;&#8320;.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>u&#8321;&#8320; = u&#8320; + 10r = 3 + 10 × 5 = <strong>53</strong>.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>(v&#8345;) géométrique, v&#8320; = 2 et q = 3. Calculer v&#8324;.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>v&#8324; = v&#8320; × q⁴ = 2 × 3⁴ = 2 × 81 = <strong>162</strong>.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Calculer S = 1 + 2 + 3 + ⋯ + 100.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>S = 100 × 101 / 2 = <strong>5050</strong>. (La légende dit que Gauss l'a trouvé en quelques secondes à l'école primaire. Maintenant, toi aussi. 😎)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> ne confonds jamais « raison » (le pas, r ou q) et « terme ». Et pour une suite par récurrence, calcule toujours les 3-4 premiers termes au brouillon : ça éclaire l'énoncé.</div>
+
+        <div class="chap-nav">
+          <a href="#accueil">← Accueil</a>
+          <a href="#ch2">Chapitre 2 : Le second degré →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 2 ══════════╗ -->
+  <main class="page" id="page-ch2">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 2 · Analyse</span>
+        <h1>Le second <span class="hl">degré</span></h1>
+        <p class="sub">Résoudre ax² + bx + c = 0, factoriser, étudier le signe d'un trinôme : le discriminant Δ est ton meilleur ami de l'année.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Forme canonique</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Tout trinôme ax² + bx + c (a ≠ 0) s'écrit sous <strong>forme canonique</strong> :</p>
+          <p class="formule">a(x − α)² + β &nbsp;&nbsp;avec α = −b/2a et β = f(α)</p>
+          <p>Le sommet de la parabole est le point (α ; β) ; α est l'axe de symétrie.</p>
+        </div>
+
+        <h3 class="sous-titre">II — Discriminant et racines</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Discriminant</span>
+          <p>Pour ax² + bx + c = 0, on calcule :</p>
+          <p class="formule">Δ = b² − 4ac</p>
+          <ul>
+            <li>Δ &gt; 0 : deux racines distinctes &nbsp;x = (−b ± √Δ) / 2a</li>
+            <li>Δ = 0 : une racine double &nbsp;x = −b / 2a</li>
+            <li>Δ &lt; 0 : aucune racine réelle</li>
+          </ul>
+        </div>
+
+        <h3 class="sous-titre">III — Factorisation et signe</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Forme factorisée &amp; signe du trinôme</span>
+          <p>Si Δ ≥ 0 et x&#8321;, x&#8322; sont les racines : ax² + bx + c = a(x − x&#8321;)(x − x&#8322;).</p>
+          <p><span class="hl">Le trinôme est du signe de a à l'extérieur des racines</span>, du signe opposé entre les racines. Si Δ &lt; 0, il garde le signe de a partout.</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Résoudre x² − 5x + 6 = 0.</em></p>
+          <p>Δ = (−5)² − 4 × 1 × 6 = 25 − 24 = 1 &gt; 0 : deux racines.</p>
+          <p>x = (5 − 1)/2 = 2 et x = (5 + 1)/2 = 3.</p>
+          <p><strong>S = { 2 ; 3 }</strong>. Vérification : 2 × 3 = 6 = c/a et 2 + 3 = 5 = −b/a. ✓ ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque · Somme et produit des racines</span>
+          <p>x&#8321; + x&#8322; = −b/a et x&#8321; × x&#8322; = c/a. Idéal pour vérifier ses racines en 3 secondes, ou pour en deviner sans Δ quand elles sont « rondes ».</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Résoudre : 2x² − 3x − 2 = 0</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Δ = 9 + 16 = 25 &gt; 0, √Δ = 5. x = (3 − 5)/4 = −1/2 et x = (3 + 5)/4 = 2.</p>
+              <p><strong>S = { −1/2 ; 2 }</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Résoudre l'inéquation : −x² + 4 ≥ 0</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Racines : x² = 4 ⟺ x = ±2. Ici a = −1 &lt; 0 : trinôme négatif à l'extérieur, positif entre.</p>
+              <p><strong>S = [−2 ; 2]</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Combien de solutions possède x² + x + 1 = 0 ?</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Δ = 1 − 4 = −3 &lt; 0 : <strong>aucune solution réelle</strong>. (La parabole ne croise jamais l'axe des abscisses.)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> avant de dégainer Δ, vérifie 5 secondes si une factorisation évidente existe (facteur commun, racine 1 ou −1). Et n'oublie jamais le « ± » : les oublis de racine négative coûtent cher.</div>
+
+        <div class="chap-nav">
+          <a href="#ch1">← Chapitre 1 : Suites</a>
+          <a href="#ch3">Chapitre 3 : Dérivation →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 3 ══════════╗ -->
+  <main class="page" id="page-ch3">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 3 · Analyse</span>
+        <h1><span class="hl">Dérivation</span></h1>
+        <p class="sub">Le nombre dérivé mesure la pente d'une courbe en un point. C'est l'outil central de l'analyse : on le retrouvera partout jusqu'au bac.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Nombre dérivé et tangente</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Le <strong>nombre dérivé</strong> de f en a, noté f′(a), est la limite du taux de variation (f(a + h) − f(a))/h quand h tend vers 0. Géométriquement, c'est la <strong>pente de la tangente</strong> à la courbe au point d'abscisse a.</p>
+        </div>
+
+        <div class="blk theoreme"><span class="blk-label">Équation de la tangente</span>
+          <p>La tangente à la courbe de f au point d'abscisse a a pour équation :</p>
+          <p class="formule">y = f′(a)(x − a) + f(a)</p>
+        </div>
+
+        <h3 class="sous-titre">II — Fonction dérivée et dérivées usuelles</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Dérivées usuelles</span>
+          <p class="formule">(k)′ = 0 · (x)′ = 1 · (xⁿ)′ = n·xⁿ⁻¹ · (1/x)′ = −1/x² · (√x)′ = 1/(2√x)</p>
+        </div>
+
+        <h3 class="sous-titre">III — Opérations sur les dérivées</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Règles de dérivation</span>
+          <p class="formule">(u + v)′ = u′ + v′ · (k·u)′ = k·u′</p>
+          <p class="formule">(uv)′ = u′v + uv′ · (u/v)′ = (u′v − uv′)/v²</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Soit f(x) = x³ − 3x. Calculer f′(x), puis l'équation de la tangente au point d'abscisse 2.</em></p>
+          <p>f′(x) = 3x² − 3.</p>
+          <p>f(2) = 8 − 6 = 2 et f′(2) = 12 − 3 = 9.</p>
+          <p>Tangente : y = 9(x − 2) + 2 = <strong>9x − 16</strong>. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque</span>
+          <p>Pour un produit, l'erreur classique est d'écrire (uv)′ = u′v′ : c'est FAUX. La bonne formule est u′v + uv′. Pose toujours u, u′, v, v′ au brouillon avant d'assembler.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Dériver f(x) = 4x³ − 2x² + 7x − 1.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>f′(x) = <strong>12x² − 4x + 7</strong>.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Dériver g(x) = (2x + 1)(x² − 3) à l'aide de la formule du produit.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>u = 2x + 1 (u′ = 2), v = x² − 3 (v′ = 2x).</p>
+              <p>g′ = u′v + uv′ = 2(x² − 3) + (2x + 1)(2x) = 2x² − 6 + 4x² + 2x = <strong>6x² + 2x − 6</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Déterminer l'équation de la tangente à la courbe de h(x) = x² au point d'abscisse 1.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>h(1) = 1, h′(x) = 2x donc h′(1) = 2. Tangente : y = 2(x − 1) + 1 = <strong>2x − 1</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> connais tes dérivées usuelles par cœur, instantanément. C'est comme les tables de multiplication : tant que tu hésites, tout le reste est ralenti.</div>
+
+        <div class="chap-nav">
+          <a href="#ch2">← Chapitre 2 : Second degré</a>
+          <a href="#ch4">Chapitre 4 : Applications de la dérivée →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 4 ══════════╗ -->
+  <main class="page" id="page-ch4">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 4 · Analyse</span>
+        <h1>Applications de la <span class="hl">dérivée</span></h1>
+        <p class="sub">La dérivée ne sert pas qu'à calculer une pente : elle donne les variations d'une fonction, ses extremums, et résout les problèmes d'optimisation.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Dérivée et sens de variation</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Théorème</span>
+          <p>Soit f dérivable sur un intervalle I :</p>
+          <ul>
+            <li>si f′(x) &gt; 0 sur I, alors f est <strong>strictement croissante</strong> sur I ;</li>
+            <li>si f′(x) &lt; 0 sur I, alors f est <strong>strictement décroissante</strong> sur I ;</li>
+            <li>si f′(x) = 0 sur I, alors f est constante sur I.</li>
+          </ul>
+        </div>
+
+        <h3 class="sous-titre">II — Extremums</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Extremum local</span>
+          <p>Si f′ <strong>s'annule en changeant de signe</strong> en un point a, alors f admet un extremum local en a (un maximum si f′ passe de + à −, un minimum si elle passe de − à +).</p>
+        </div>
+
+        <div class="blk methode"><span class="blk-label">Méthode · Étude complète d'une fonction</span>
+          <ol>
+            <li>Calculer f′(x).</li>
+            <li>Étudier le <strong>signe de f′</strong> (souvent un tableau de signes).</li>
+            <li>En déduire les variations de f, et dresser le tableau de variations.</li>
+            <li>Repérer les extremums là où f′ s'annule en changeant de signe.</li>
+          </ol>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Étudier les variations de f(x) = x³ − 3x sur ℝ.</em></p>
+          <p>f′(x) = 3x² − 3 = 3(x − 1)(x + 1).</p>
+          <p>f′ s'annule en −1 et 1 ; elle est positive à l'extérieur, négative entre.</p>
+          <p><strong>f est croissante sur ]−∞ ; −1], décroissante sur [−1 ; 1], croissante sur [1 ; +∞[.</strong></p>
+          <p>Maximum local f(−1) = 2 ; minimum local f(1) = −2. ∎</p>
+        </div>
+
+        <h3 class="sous-titre">III — Optimisation</h3>
+
+        <div class="blk methode"><span class="blk-label">Méthode · Résoudre un problème d'optimisation</span>
+          <ol>
+            <li>Exprimer la quantité à optimiser en fonction d'<strong>une seule variable</strong>, et préciser son intervalle.</li>
+            <li>Dériver, étudier le signe, trouver l'extremum.</li>
+            <li>Conclure en répondant à la question posée (avec l'unité !).</li>
+          </ol>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Dresser le tableau de variations de f(x) = x² − 4x + 1 sur ℝ.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>f′(x) = 2x − 4, qui s'annule en x = 2 (négative avant, positive après).</p>
+              <p><strong>f décroissante sur ]−∞ ; 2], croissante sur [2 ; +∞[</strong>, minimum f(2) = 4 − 8 + 1 = −3.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Soit f(x) = x³ − 12x. Déterminer ses extremums locaux.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>f′(x) = 3x² − 12 = 3(x − 2)(x + 2), s'annule en ±2 en changeant de signe.</p>
+              <p>Maximum local f(−2) = −8 + 24 = <strong>16</strong> ; minimum local f(2) = 8 − 24 = <strong>−16</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>On dispose de 20 m de grillage pour clôturer un enclos rectangulaire contre un mur (un seul côté à clôturer en plus des deux largeurs). Quelle largeur x maximise l'aire ?</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Longueur le long du mur : 20 − 2x. Aire A(x) = x(20 − 2x) = 20x − 2x², pour x ∈ ]0 ; 10[.</p>
+              <p>A′(x) = 20 − 4x, s'annule en x = 5 (de + à −) : maximum.</p>
+              <p><strong>x = 5 m</strong> (et longueur 10 m), pour une aire maximale de 50 m². ∎</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> dans un tableau de variations, écris d'abord la ligne du signe de f′, et déduis-en seulement ensuite les flèches de f. Jamais l'inverse.</div>
+
+        <div class="chap-nav">
+          <a href="#ch3">← Chapitre 3 : Dérivation</a>
+          <a href="#ch5">Chapitre 5 : Fonction exponentielle →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 5 ══════════╗ -->
+  <main class="page" id="page-ch5">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 5 · Analyse</span>
+        <h1>Fonction <span class="hl">exponentielle</span></h1>
+        <p class="sub">La seule fonction égale à sa propre dérivée. Toujours strictement positive, toujours croissante : elle modélise toutes les croissances « explosives ».</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Définition et propriété fondamentale</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>La <strong>fonction exponentielle</strong>, notée exp ou x ↦ eˣ, est l'unique fonction dérivable sur ℝ telle que :</p>
+          <p class="formule">exp′ = exp &nbsp;&nbsp;et&nbsp;&nbsp; exp(0) = 1</p>
+          <p>Autrement dit, (eˣ)′ = eˣ et e⁰ = 1. Le nombre e ≈ 2,718.</p>
+        </div>
+
+        <div class="blk theoreme"><span class="blk-label">Signe et variations</span>
+          <p>Pour tout réel x, <span class="hl">eˣ &gt; 0</span>. La fonction exp est strictement croissante sur ℝ.</p>
+        </div>
+
+        <h3 class="sous-titre">II — Propriétés algébriques</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Règles de calcul</span>
+          <p class="formule">e&#7491;&#8314;&#7495; = e&#7491; × e&#7495; · e&#7491;&#8315;&#7495; = e&#7491; / e&#7495; · (e&#7491;)&#8319; = e&#7491;&#8319; · e&#8315;&#7491; = 1 / e&#7491;</p>
+        </div>
+
+        <h3 class="sous-titre">III — Équations, inéquations, dérivée composée</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Conséquence de la stricte croissance</span>
+          <p class="formule">e&#7491; = e&#7495; ⟺ a = b &nbsp;&nbsp;et&nbsp;&nbsp; e&#7491; &lt; e&#7495; ⟺ a &lt; b</p>
+          <p>Dérivée d'une exponentielle composée : <strong>(e&#7512;)′ = u′·e&#7512;</strong>.</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Résoudre e²ˣ = eˣ⁺³.</em></p>
+          <p>La fonction exp étant strictement croissante, on peut identifier les exposants : 2x = x + 3.</p>
+          <p>D'où <strong>x = 3</strong>. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque · eˣ ne s'annule jamais</span>
+          <p>Dans une étude de signe de x·eˣ par exemple, le facteur eˣ est toujours strictement positif : le signe ne dépend que de x. Réflexe à automatiser.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Simplifier : (e³ × e⁻¹) / e</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>e³⁻¹⁻¹ = e¹ = <strong>e</strong>.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Résoudre l'inéquation : eˣ⁻¹ &gt; 1</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>1 = e⁰, et exp est croissante : eˣ⁻¹ &gt; e⁰ ⟺ x − 1 &gt; 0 ⟺ x &gt; 1.</p>
+              <p><strong>S = ]1 ; +∞[</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Dériver f(x) = x·eˣ, puis g(x) = e^(2x + 1).</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>f : produit, u = x (u′ = 1), v = eˣ (v′ = eˣ) : f′(x) = 1·eˣ + x·eˣ = <strong>(1 + x)eˣ</strong>.</p>
+              <p>g : composée, u = 2x + 1 (u′ = 2) : g′(x) = <strong>2·e^(2x + 1)</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> garde en tête le graphe de exp : passe par (0 ; 1), explose en +∞, s'écrase vers 0 (sans jamais l'atteindre) en −∞. Visualiser la courbe évite beaucoup d'erreurs de signe.</div>
+
+        <div class="chap-nav">
+          <a href="#ch4">← Chapitre 4 : Applications de la dérivée</a>
+          <a href="#ch6">Chapitre 6 : Fonctions trigonométriques →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 6 ══════════╗ -->
+  <main class="page" id="page-ch6">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 6 · Analyse</span>
+        <h1>Fonctions <span class="hl">trigonométriques</span></h1>
+        <p class="sub">Le cercle trigonométrique donne du sens à cosinus et sinus pour n'importe quel angle. Un bon dessin vaut mieux que dix formules apprises par cœur.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Radians et cercle trigonométrique</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Le <strong>radian</strong> est une unité d'angle : un demi-tour vaut π radians.</p>
+          <p class="formule">180° = π rad &nbsp;&nbsp;(donc 90° = π/2, 60° = π/3, 45° = π/4, 30° = π/6)</p>
+          <p>Sur le <strong>cercle trigonométrique</strong> (rayon 1), à un réel x on associe un point M : <strong>cos x est son abscisse, sin x son ordonnée</strong>.</p>
+        </div>
+
+        <h3 class="sous-titre">II — Cosinus et sinus</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Propriétés fondamentales</span>
+          <p class="formule">cos²x + sin²x = 1 &nbsp;·&nbsp; −1 ≤ cos x ≤ 1 &nbsp;·&nbsp; −1 ≤ sin x ≤ 1</p>
+          <p>Périodicité : cos et sin sont périodiques de période 2π. Parité : cos est paire (cos(−x) = cos x), sin est impaire (sin(−x) = −sin x).</p>
+        </div>
+
+        <h3 class="sous-titre">III — Valeurs remarquables</h3>
+
+        <div class="blk theoreme"><span class="blk-label">À connaître par cœur</span>
+          <p>cos(π/6) = √3/2, cos(π/4) = √2/2, cos(π/3) = 1/2 ;</p>
+          <p>sin(π/6) = 1/2, sin(π/4) = √2/2, sin(π/3) = √3/2.</p>
+          <p>(Et cos 0 = 1, sin 0 = 0, cos(π/2) = 0, sin(π/2) = 1.)</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Sachant que x ∈ [0 ; π/2] et cos x = 1/2, déterminer sin x puis x.</em></p>
+          <p>sin²x = 1 − cos²x = 1 − 1/4 = 3/4, donc sin x = ±√3/2.</p>
+          <p>Sur [0 ; π/2], le sinus est positif : <strong>sin x = √3/2</strong>. On reconnaît alors <strong>x = π/3</strong>. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque · Dessine le cercle</span>
+          <p>Pour déterminer le signe de cos ou sin selon le quadrant, trace un petit cercle trigo au brouillon. C'est bien plus fiable que d'essayer de mémoriser tous les signes.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Convertir en radians : 90°, 45° et 120°.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>90° = <strong>π/2</strong> ; 45° = <strong>π/4</strong> ; 120° = 120 × π/180 = <strong>2π/3</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Sachant que x ∈ [−π/2 ; 0] et sin x = −1/2, déterminer cos x.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>cos²x = 1 − 1/4 = 3/4, donc cos x = ±√3/2. Sur [−π/2 ; 0], le cosinus est positif :</p>
+              <p><strong>cos x = √3/2</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Simplifier A = cos(−x) + sin(−x) + cos x − sin x.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>cos(−x) = cos x et sin(−x) = −sin x, donc A = cos x − sin x + cos x − sin x = <strong>2cos x − 2sin x</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> apprends les valeurs remarquables dans un petit tableau π/6, π/4, π/3 : remarque que les sinus montent (1/2, √2/2, √3/2) pendant que les cosinus descendent. Une symétrie qui aide à les retenir.</div>
+
+        <div class="chap-nav">
+          <a href="#ch5">← Chapitre 5 : Exponentielle</a>
+          <a href="#ch7">Chapitre 7 : Produit scalaire →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 7 ══════════╗ -->
+  <main class="page" id="page-ch7">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 7 · Géométrie</span>
+        <h1>Produit <span class="hl">scalaire</span></h1>
+        <p class="sub">Un nombre qui encode à la fois les longueurs et l'angle entre deux vecteurs. Son atout : produit scalaire nul ⟺ vecteurs orthogonaux.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Définitions</h3>
+
+        <div class="blk definition"><span class="blk-label">Trois expressions du produit scalaire</span>
+          <p><strong>Avec les coordonnées</strong> (repère orthonormé) :</p>
+          <p class="formule">u&#8407; · v&#8407; = xx′ + yy′</p>
+          <p><strong>Avec les normes et l'angle θ entre les vecteurs :</strong></p>
+          <p class="formule">u&#8407; · v&#8407; = ‖u&#8407;‖ × ‖v&#8407;‖ × cos θ</p>
+          <p><strong>Avec les normes seules :</strong> u&#8407; · v&#8407; = ½(‖u&#8407; + v&#8407;‖² − ‖u&#8407;‖² − ‖v&#8407;‖²).</p>
+        </div>
+
+        <h3 class="sous-titre">II — Orthogonalité</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Caractérisation</span>
+          <p class="formule">u&#8407; ⊥ v&#8407; ⟺ u&#8407; · v&#8407; = 0</p>
+          <p>(Deux vecteurs non nuls sont orthogonaux exactement quand leur produit scalaire est nul, car cos(π/2) = 0.)</p>
+        </div>
+
+        <h3 class="sous-titre">III — Applications</h3>
+
+        <div class="blk methode"><span class="blk-label">Méthode · Traduire une question géométrique</span>
+          <ul>
+            <li>« Montrer que ABC est rectangle en A » ⟹ montrer que AB&#8407; · AC&#8407; = 0.</li>
+            <li>« Calculer un angle » ⟹ utiliser cos θ = (u&#8407; · v&#8407;) / (‖u&#8407;‖·‖v&#8407;‖).</li>
+          </ul>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Soit u&#8407;(3 ; 2) et v&#8407;(−4 ; 6). Ces vecteurs sont-ils orthogonaux ?</em></p>
+          <p>u&#8407; · v&#8407; = 3 × (−4) + 2 × 6 = −12 + 12 = 0.</p>
+          <p>Le produit scalaire est nul, donc <strong>u&#8407; et v&#8407; sont orthogonaux</strong>. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque</span>
+          <p>Le produit scalaire est un <em>nombre</em>, pas un vecteur. Et il peut être négatif (angle obtus), nul (angle droit) ou positif (angle aigu) : son signe renseigne déjà sur l'angle.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Calculer u&#8407; · v&#8407; pour u&#8407;(2 ; 3) et v&#8407;(1 ; −4).</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>2 × 1 + 3 × (−4) = 2 − 12 = <strong>−10</strong> (le signe négatif indique un angle obtus).</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>On donne A(1 ; 1), B(4 ; 2) et C(2 ; 7). Le triangle ABC est-il rectangle en A ?</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>AB&#8407;(3 ; 1) et AC&#8407;(1 ; 6). AB&#8407; · AC&#8407; = 3 × 1 + 1 × 6 = 9 ≠ 0.</p>
+              <p><strong>Non, ABC n'est pas rectangle en A.</strong></p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Soit u&#8407;(1 ; 0) et v&#8407;(1 ; 1). Calculer l'angle θ entre les deux vecteurs.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>u&#8407; · v&#8407; = 1 ; ‖u&#8407;‖ = 1 et ‖v&#8407;‖ = √2. Donc cos θ = 1/√2 = √2/2.</p>
+              <p>D'où <strong>θ = π/4</strong> (soit 45°).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> « montrer que le triangle est rectangle » = « montrer qu'un produit scalaire est nul ». Traduis toujours la question géométrique en calcul avant de te lancer.</div>
+
+        <div class="chap-nav">
+          <a href="#ch6">← Chapitre 6 : Trigonométrie</a>
+          <a href="#ch8">Chapitre 8 : Géométrie repérée →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 8 ══════════╗ -->
+  <main class="page" id="page-ch8">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 8 · Géométrie</span>
+        <h1>Géométrie <span class="hl">repérée</span></h1>
+        <p class="sub">Droites et cercles deviennent des équations. Savoir passer de la figure à l'équation (et inversement) est la clé de tout le chapitre.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Équations de droites</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Équation cartésienne</span>
+          <p>Toute droite a une équation de la forme <strong>ax + by + c = 0</strong>. Un vecteur directeur est alors u&#8407;(−b ; a).</p>
+          <p>Si la droite n'est pas verticale, on peut l'écrire <strong>y = mx + p</strong> : m est le coefficient directeur, p l'ordonnée à l'origine.</p>
+          <p class="formule">m = (y&#8322; − y&#8321;) / (x&#8322; − x&#8321;)</p>
+        </div>
+
+        <h3 class="sous-titre">II — Équation d'un cercle</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Cercle de centre et rayon donnés</span>
+          <p>Le cercle de centre Ω(a ; b) et de rayon r a pour équation :</p>
+          <p class="formule">(x − a)² + (y − b)² = r²</p>
+        </div>
+
+        <h3 class="sous-titre">III — Reconnaître un cercle</h3>
+
+        <div class="blk methode"><span class="blk-label">Méthode · Forme développée → forme canonique</span>
+          <p>Pour reconnaître un cercle dans une équation développée, on regroupe et on complète les carrés : x² − 2ax = (x − a)² − a². On obtient alors (x − a)² + (y − b)² = nombre.</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>L'équation x² + y² − 4x + 2y − 4 = 0 est-elle celle d'un cercle ?</em></p>
+          <p>x² − 4x = (x − 2)² − 4 et y² + 2y = (y + 1)² − 1.</p>
+          <p>L'équation devient (x − 2)² + (y + 1)² − 4 − 1 − 4 = 0, soit (x − 2)² + (y + 1)² = 9.</p>
+          <p><strong>Oui : cercle de centre Ω(2 ; −1) et de rayon 3.</strong> ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque</span>
+          <p>Si en regroupant tu obtiens « = nombre négatif », ce n'est PAS un cercle (un carré ne peut pas être négatif). Pense à le signaler sur ta copie : c'est une vraie question de cours.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>Donner l'équation du cercle de centre Ω(2 ; −1) et de rayon 3.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p><strong>(x − 2)² + (y + 1)² = 9</strong>. Attention au signe : y − (−1) = y + 1.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Déterminer l'équation réduite de la droite passant par A(0 ; 1) et B(2 ; 5).</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>m = (5 − 1)/(2 − 0) = 2 ; la droite passe par A(0 ; 1) donc p = 1.</p>
+              <p><strong>y = 2x + 1</strong>. Vérification avec B : 2 × 2 + 1 = 5. ✓</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Donner un vecteur directeur de la droite d'équation 3x − 2y + 1 = 0.</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Avec ax + by + c = 0, un vecteur directeur est u&#8407;(−b ; a) = <strong>(2 ; 3)</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> vérifie toujours une équation de droite ou de cercle en y réinjectant les coordonnées d'un point connu. C'est gratuit et ça détecte presque toutes les erreurs de calcul.</div>
+
+        <div class="chap-nav">
+          <a href="#ch7">← Chapitre 7 : Produit scalaire</a>
+          <a href="#ch9">Chapitre 9 : Probabilités conditionnelles →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 9 ══════════╗ -->
+  <main class="page" id="page-ch9">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 9 · Probabilités</span>
+        <h1>Probabilités <span class="hl">conditionnelles</span></h1>
+        <p class="sub">Comment la connaissance d'un événement modifie la probabilité d'un autre. L'arbre pondéré fait 80 % du travail à ta place.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Probabilité conditionnelle</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>La probabilité de B <strong>sachant que A est réalisé</strong> (avec P(A) ≠ 0) est :</p>
+          <p class="formule">P&#8336;(B) = P(A ∩ B) / P(A)</p>
+        </div>
+
+        <h3 class="sous-titre">II — Arbres pondérés</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Règles de l'arbre</span>
+          <ul>
+            <li>La somme des probabilités des branches issues d'un même nœud vaut <strong>1</strong>.</li>
+            <li>La probabilité d'un chemin est le <strong>produit</strong> des probabilités le long du chemin.</li>
+            <li><strong>Formule des probabilités totales :</strong> la probabilité d'un événement est la <strong>somme</strong> des probabilités des chemins qui y mènent.</li>
+          </ul>
+        </div>
+
+        <h3 class="sous-titre">III — Indépendance</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Deux événements A et B sont <strong>indépendants</strong> si la réalisation de l'un ne change pas la probabilité de l'autre :</p>
+          <p class="formule">P(A ∩ B) = P(A) × P(B)</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>Dans un lycée, 60 % des élèves sont en filière générale (G), les autres en techno (T). 30 % des G et 50 % des T font du sport. On choisit un élève au hasard : quelle est la probabilité qu'il fasse du sport ?</em></p>
+          <p>On construit l'arbre, puis on applique la formule des probabilités totales (deux chemins mènent à « sport ») :</p>
+          <p>P(S) = P(G) × P&#7506;(S) + P(T) × P&#7511;(S) = 0,6 × 0,3 + 0,4 × 0,5 = 0,18 + 0,20 = <strong>0,38</strong>. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque · Vérification express</span>
+          <p>Sur ton arbre, vérifie que les branches issues d'un même nœud somment bien à 1. Si ce n'est pas le cas, il y a une erreur — détection immédiate.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>On donne P(A) = 0,5 et P(A ∩ B) = 0,2. Calculer P&#8336;(B).</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>P&#8336;(B) = 0,2 / 0,5 = <strong>0,4</strong>.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Une urne contient 3 boules rouges et 2 vertes. On tire deux boules successivement sans remise. Probabilité de tirer deux rouges ?</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>P(1ʳᵉ rouge) = 3/5. Sachant cela, il reste 2 rouges sur 4 : P(2ᵉ rouge | 1ʳᵉ rouge) = 2/4.</p>
+              <p>P(deux rouges) = 3/5 × 2/4 = 6/20 = <strong>3/10</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>P(A) = 0,4, P(B) = 0,5 et P(A ∩ B) = 0,2. A et B sont-ils indépendants ?</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>P(A) × P(B) = 0,4 × 0,5 = 0,2 = P(A ∩ B).</p>
+              <p><strong>Oui, A et B sont indépendants.</strong></p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> face à un énoncé de probabilités à deux étapes, dessine TOUJOURS l'arbre d'abord. Il organise les données et rend la formule des probabilités totales évidente.</div>
+
+        <div class="chap-nav">
+          <a href="#ch8">← Chapitre 8 : Géométrie repérée</a>
+          <a href="#ch10">Chapitre 10 : Variables aléatoires →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CHAPITRE 10 ══════════╗ -->
+  <main class="page" id="page-ch10">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Chapitre 10 · Probabilités</span>
+        <h1>Variables <span class="hl">aléatoires</span></h1>
+        <p class="sub">Associer un nombre au résultat d'une expérience, puis résumer le tout par une moyenne (l'espérance) et une dispersion (l'écart-type).</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <h3 class="sous-titre">I — Loi de probabilité</h3>
+
+        <div class="blk definition"><span class="blk-label">Définition</span>
+          <p>Une <strong>variable aléatoire</strong> X associe un nombre à chaque issue d'une expérience. Sa <strong>loi de probabilité</strong> est le tableau qui donne, pour chaque valeur x&#7522; possible, sa probabilité p&#7522;.</p>
+          <p>La somme de toutes les probabilités vaut toujours 1 : Σ p&#7522; = 1.</p>
+        </div>
+
+        <h3 class="sous-titre">II — Espérance</h3>
+
+        <div class="blk definition"><span class="blk-label">Espérance</span>
+          <p class="formule">E(X) = Σ x&#7522; · p&#7522;</p>
+          <p>C'est la <strong>valeur moyenne</strong> de X sur un très grand nombre de répétitions. Pour un jeu, E(gain) = 0 signifie « jeu équitable ».</p>
+        </div>
+
+        <h3 class="sous-titre">III — Variance et écart-type</h3>
+
+        <div class="blk theoreme"><span class="blk-label">Variance &amp; écart-type</span>
+          <p class="formule">V(X) = Σ p&#7522;·x&#7522;² − E(X)² &nbsp;·&nbsp; σ(X) = √V(X)</p>
+          <p>La variance et l'écart-type mesurent la <strong>dispersion</strong> de X autour de son espérance. Plus σ est grand, plus les valeurs sont étalées.</p>
+        </div>
+
+        <div class="blk exemple"><span class="blk-label">Exemple rédigé</span>
+          <p><em>X prend les valeurs 0, 1, 2 avec les probabilités 0,25 ; 0,5 ; 0,25. Calculer E(X) puis V(X).</em></p>
+          <p>E(X) = 0 × 0,25 + 1 × 0,5 + 2 × 0,25 = <strong>1</strong>.</p>
+          <p>Σ p&#7522;x&#7522;² = 0²×0,25 + 1²×0,5 + 2²×0,25 = 0,5 + 1 = 1,5.</p>
+          <p>V(X) = 1,5 − 1² = <strong>0,5</strong>, donc σ(X) = √0,5 ≈ 0,71. ∎</p>
+        </div>
+
+        <div class="blk remarque"><span class="blk-label">Remarque · Gain brut vs gain net</span>
+          <p>Dans un jeu d'argent, distingue le gain brut (ce qu'on gagne) du gain net (après déduction de la mise). C'est le piège favori des énoncés.</p>
+        </div>
+
+        <div class="bloc-titre"><span class="tag tag-exo">Exercices</span> À toi de jouer</div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 1</span>
+          <p>X prend les valeurs 1, 2, 3 avec les probabilités 0,2 ; 0,3 ; 0,5. Calculer E(X).</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution"><p>E(X) = 1 × 0,2 + 2 × 0,3 + 3 × 0,5 = 0,2 + 0,6 + 1,5 = <strong>2,3</strong>.</p></div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 2</span>
+          <p>Un jeu coûte 2 €. On lance un dé : si on fait 6, on gagne 10 € (sinon rien). Le jeu est-il favorable au joueur ?</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Gain net : +8 € avec probabilité 1/6, −2 € avec probabilité 5/6.</p>
+              <p>E = 8 × 1/6 − 2 × 5/6 = (8 − 10)/6 = −2/6 = <strong>−1/3 € : défavorable au joueur</strong> (on perd en moyenne 33 centimes par partie).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exo">
+          <span class="exo-num">Exercice 3</span>
+          <p>Avec l'exercice 1 (valeurs 1, 2, 3 et probabilités 0,2 ; 0,3 ; 0,5), calculer V(X).</p>
+          <details><summary>Voir la solution</summary>
+            <div class="solution">
+              <p>Σ p&#7522;x&#7522;² = 1×0,2 + 4×0,3 + 9×0,5 = 0,2 + 1,2 + 4,5 = 5,9.</p>
+              <p>V(X) = 5,9 − (2,3)² = 5,9 − 5,29 = <strong>0,61</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="astuce"><strong>💡 Conseil de prof :</strong> commence toujours par dresser proprement le tableau de la loi et vérifie que la somme des probabilités fait 1. Une loi mal posée fausse l'espérance ET la variance.</div>
+
+        <div class="chap-nav">
+          <a href="#ch9">← Chapitre 9 : Probabilités conditionnelles</a>
+          <a href="#conseils">Conseils de méthode →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════ CONSEILS ══════════╗ -->
+  <main class="page" id="page-conseils">
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Méthode &amp; organisation</span>
+        <h1>Les conseils que je répète <span class="hl">à tous mes élèves</span></h1>
+        <p class="sub">La première pose les bases de la terminale. Prendre de bonnes habitudes maintenant, c'est s'épargner bien des difficultés l'an prochain.</p>
+      </div>
+    </div>
+
+    <section class="cours-zone">
+      <div class="wrap">
+
+        <div class="conseil-card">
+          <h2><span class="ico">📅</span>Travailler régulièrement (et peu)</h2>
+          <p><span class="hl">20 minutes par jour battent 3 heures le dimanche.</span> Le cerveau consolide pendant le sommeil : cinq petites sessions valent bien plus qu'une grosse.</p>
+          <ul>
+            <li>Le soir même d'un cours : relis tes notes 10 minutes. C'est le moment où la mémoire fixe le mieux.</li>
+            <li>Refais un exercice vu en classe <em>sans regarder le corrigé</em> : si tu bloques, le cours n'est pas encore acquis.</li>
+            <li>Une fiche par chapitre : définitions + théorèmes (AVEC leurs hypothèses) + 1 exemple type. Une page max.</li>
+          </ul>
+        </div>
+
+        <div class="conseil-card">
+          <h2><span class="ico">✍️</span>La bonne méthode face à un exercice</h2>
+          <ul>
+            <li><strong>Lis l'énoncé deux fois</strong>, en entier, avant d'écrire. Souligne données et question.</li>
+            <li><strong>Traduis</strong> : « résoudre ax² + bx + c = 0 » = calcul du discriminant ; « orthogonal » = produit scalaire nul ; « deux étapes » en probabilités = arbre pondéré.</li>
+            <li><strong>Brouillon d'abord</strong>, rédaction ensuite. Le brouillon cherche, la copie démontre.</li>
+            <li><strong>Vérifie</strong> : ordre de grandeur, remplacement dans l'équation, cohérence du signe. 30 secondes qui sauvent des points.</li>
+          </ul>
+        </div>
+
+        <div class="conseil-card">
+          <h2><span class="ico">⏱️</span>Le jour du DS</h2>
+          <ul>
+            <li>Survole le sujet en 2 minutes et commence par ce que tu sais faire.</li>
+            <li>Bloqué plus de 5 minutes ? Saute la question et reviens-y — la suivante est souvent indépendante, et donne parfois un indice.</li>
+            <li>Garde 5 minutes de relecture : signes, conclusions encadrées, calculs vérifiés.</li>
+            <li>Une question non aboutie rapporte des points si la démarche est posée. <span class="hl">N'efface jamais un raisonnement.</span></li>
+          </ul>
+        </div>
+
+        <div class="conseil-card">
+          <h2><span class="ico">🚀</span>Préparer la terminale</h2>
+          <ul>
+            <li>Les chapitres clés (second degré, dérivation, exponentielle, suites) reviennent en force l'an prochain : ne les laisse pas s'installer comme des lacunes.</li>
+            <li>Tiens un « carnet d'erreurs » et relis-le avant chaque DS. On refait toujours les mêmes erreurs… sauf si on les a notées.</li>
+            <li>Soigne déjà ta rédaction : citer les propriétés utilisées, encadrer les résultats. C'est noté de plus en plus strictement.</li>
+            <li>Apprends à utiliser ta calculatrice (tableau de valeurs, résolution d'équations) : un vrai gain de temps.</li>
+          </ul>
+        </div>
+
+        <div class="conseil-card">
+          <h2><span class="ico">⚠️</span>Le top 5 des erreurs de première</h2>
+          <ul>
+            <li><strong>Oublier de changer le sens</strong> d'une inéquation en multipliant ou divisant par un nombre négatif.</li>
+            <li><strong>(a + b)² = a² + b²</strong> : non ! Le double produit 2ab ne disparaît jamais.</li>
+            <li><strong>Oublier la racine négative</strong> de x² = k (il y a x = √k ET x = −√k).</li>
+            <li><strong>(uv)′ = u′v′</strong> : faux ! La bonne formule du produit est u′v + uv′.</li>
+            <li><strong>Confondre le signe de a</strong> dans le signe du trinôme : c'est « du signe de a à l'extérieur des racines ».</li>
+          </ul>
+        </div>
+
+        <div class="conseil-card">
+          <h2><span class="ico">🧠</span>Et surtout…</h2>
+          <p>Les maths ne sont pas un don, c'est un sport : ça s'entraîne. Personne ne « comprend tout du premier coup » — pas même ton prof. Bloquer fait partie de l'apprentissage : c'est précisément au moment où tu cherches que ton cerveau progresse.</p>
+          <p>Si un chapitre résiste vraiment, n'attends pas que le retard s'accumule : pose tes questions en classe, à un camarade, ou en cours particulier. <span class="hl">Demander de l'aide est une stratégie, pas un aveu de faiblesse.</span></p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <p><span class="hand">« Les maths ne sont pas un don, c'est un sport : ça s'entraîne. »</span></p>
+      <p style="margin-top:8px">© 2026 Valentin · Cours de première spé maths — Document à usage pédagogique.</p>
+    </div>
+  </footer>
+
+  </div><!-- /.content -->
+
+<script>
+/* ============================================================
+   1) Menu déroulant (hamburger)
+   2) Routage par onglets (hash) : #accueil, #ch1 … #ch10, #conseils
+   Fonctionne en local (file://), bouton "précédent" géré.
+   ============================================================ */
+(function () {
+  var PAGES = ['accueil','ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10','conseils'];
+
+  var burger   = document.getElementById('burger');
+  var menu     = document.getElementById('menu');
+  var backdrop = document.getElementById('backdrop');
+
+  function openMenu()  {
+    menu.classList.add('open');
+    backdrop.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Fermer le menu');
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    backdrop.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  function toggleMenu(){
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  }
+
+  burger.addEventListener('click', toggleMenu);
+  backdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  function showPage(name) {
+    if (PAGES.indexOf(name) === -1) name = 'accueil';
+    PAGES.forEach(function (p) {
+      var page = document.getElementById('page-' + p);
+      if (page) page.classList.toggle('visible', p === name);
+    });
+    document.querySelectorAll('.menu a').forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('data-page') === name);
+    });
+    window.scrollTo(0, 0);
+  }
+
+  function route() {
+    showPage((location.hash || '#accueil').slice(1));
+  }
+
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) closeMenu();
+  });
+
+  document.querySelectorAll('[data-goto]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      location.hash = '#' + btn.getAttribute('data-goto');
+    });
+  });
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+
+</body>
+</html>

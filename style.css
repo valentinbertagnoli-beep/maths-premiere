@@ -1,0 +1,369 @@
+/* ============================================================
+   Valentin·Maths — Application locale (support élèves)
+   Même template que le site v2, en version "app" avec sidebar.
+   Fonctionne hors-ligne : double-cliquer sur index.html.
+   ============================================================ */
+
+:root{
+  --paper:#FFFFFF;
+  --paper-soft:#FAFAF7;
+  --grid:#EAF1F7;
+  --ink:#1C2B4A;
+  --ink-soft:#5A6786;
+  --bic:#2B50C8;
+  --marge:#E4452F;
+  --fluo:#FFF06B;
+  --vert:#2FA36B;
+  --line:#E2E6EE;
+  --sidebar-w:240px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans','Segoe UI',-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.65;
+}
+
+h1,h2,h3,h4{font-family:'Outfit','Segoe UI',-apple-system,sans-serif;line-height:1.2}
+.hand{font-family:'Caveat','Bradley Hand','Segoe Print',cursive}
+
+.hl{
+  background:linear-gradient(104deg, transparent 2%, var(--fluo) 4%, var(--fluo) 96%, transparent 98%);
+  padding:0 .12em;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+
+a:focus-visible, button:focus-visible, summary:focus-visible{
+  outline:3px solid var(--bic);outline-offset:2px;border-radius:2px;
+}
+
+/* ============ Barre du haut + menu déroulant ============ */
+
+.topbar{
+  position:sticky;top:0;z-index:30;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:11px 24px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:var(--ink);
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;
+}
+.brand img{width:36px;height:36px;display:block}
+.brand span{color:var(--bic)}
+
+/* Bouton hamburger (les 3 barres) */
+.burger{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:48px;height:42px;padding:0 12px;
+  background:var(--paper-soft);border:1.5px solid var(--line);border-radius:10px;
+  cursor:pointer;transition:border-color .15s;
+}
+.burger:hover{border-color:var(--ink)}
+.burger span{
+  display:block;height:3px;border-radius:2px;background:var(--ink);
+  transition:transform .2s, opacity .2s;
+}
+/* Animation ☰ → ✕ quand le menu est ouvert */
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Voile de fond qui assombrit la page quand le menu est ouvert */
+.backdrop{
+  position:fixed;inset:0;z-index:20;
+  background:rgba(28,43,74,.28);
+  opacity:0;visibility:hidden;transition:opacity .2s, visibility .2s;
+}
+.backdrop.open{opacity:1;visibility:visible}
+
+/* Panneau du menu déroulant */
+.menu{
+  position:absolute;z-index:25;
+  top:calc(100% + 8px);right:20px;
+  width:min(330px, calc(100vw - 32px));
+  max-height:calc(100vh - 96px);overflow-y:auto;
+  background:#fff;border:1.5px solid var(--line);border-radius:14px;
+  box-shadow:0 18px 40px rgba(28,43,74,.16);
+  padding:14px;
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .18s, transform .18s, visibility .18s;
+}
+.menu.open{opacity:1;visibility:visible;transform:translateY(0)}
+.menu ul{list-style:none}
+.menu li{margin-bottom:2px}
+.menu a{
+  display:flex;align-items:center;text-decoration:none;color:var(--ink-soft);
+  font-weight:500;font-size:.95rem;
+  padding:9px 12px;border-radius:8px;
+  border-left:3px solid transparent;
+  transition:background .15s,color .15s;
+}
+.menu a:hover{background:var(--paper-soft);color:var(--ink)}
+.menu a.active{background:var(--paper-soft);color:var(--ink);font-weight:700;border-left:3px solid var(--marge)}
+.menu a .num-ch{
+  display:inline-block;width:30px;flex-shrink:0;
+  font-family:'Caveat',cursive;font-size:1.05rem;color:var(--marge);
+}
+.menu .sep{
+  margin:12px 0 6px;font-size:.72rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);
+  padding-left:12px;
+}
+.menu .sep:first-child{margin-top:4px}
+
+.content{min-width:0}
+.wrap{max-width:840px;margin:0 auto;padding:0 32px}
+
+/* ============ Pages (routage par onglets) ============ */
+.page{display:none}
+.page.visible{display:block}
+
+/* ============ Bandeau de page ============ */
+.hero{
+  padding:54px 0 44px;
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:30px 30px;
+  border-bottom:1px solid var(--line);
+}
+.hero .kicker{
+  font-family:'Caveat',cursive;font-size:1.35rem;color:var(--bic);
+  display:inline-block;margin-bottom:4px;
+}
+.hero h1{font-size:clamp(1.8rem, 4.5vw, 2.6rem);font-weight:800;max-width:24ch}
+.hero p.sub{margin-top:14px;font-size:1.05rem;max-width:58ch;color:var(--ink-soft)}
+
+/* ============ Sommaire de niveau ============ */
+.sommaire{
+  margin:34px 0 10px;
+  border:1.5px solid var(--line);border-radius:12px;
+  padding:20px 22px;background:var(--paper-soft);
+}
+.sommaire h2{font-size:1rem;margin-bottom:12px}
+.sommaire ol{
+  list-style:none;columns:2;column-gap:30px;
+}
+.sommaire li{margin-bottom:7px;break-inside:avoid}
+.sommaire a{
+  text-decoration:none;color:var(--ink);font-size:.93rem;
+}
+.sommaire a:hover{color:var(--bic);text-decoration:underline}
+.sommaire .n{
+  font-family:'Caveat',cursive;color:var(--marge);font-size:1.05rem;
+  display:inline-block;width:26px;
+}
+
+/* ============ Chapitres ============ */
+section.cours-zone{padding:30px 0 50px}
+
+.chapitre{
+  border:1.5px solid var(--line);border-radius:14px;
+  padding:28px 26px;margin-bottom:30px;background:var(--paper);
+  scroll-margin-top:20px;
+}
+.chapitre > h2{font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.chapitre .chap-note{
+  font-family:'Caveat',cursive;font-size:1.2rem;color:var(--bic);
+  display:block;margin-bottom:18px;
+}
+
+.bloc-titre{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:1rem;
+  margin:22px 0 12px;
+}
+.bloc-titre .tag{
+  font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 10px;border-radius:20px;border:1.5px solid currentColor;
+}
+.tag-cours{color:var(--bic)}
+.tag-exo{color:var(--marge)}
+.tag-astuce{color:var(--vert)}
+
+.cours{
+  background:var(--paper-soft);
+  border-left:3px solid var(--bic);
+  border-radius:0 10px 10px 0;
+  padding:16px 18px;
+}
+.cours p{margin-bottom:9px}
+.cours p:last-child{margin-bottom:0}
+.cours ul{margin:6px 0 8px 20px}
+.cours li{margin-bottom:5px}
+
+.formule{
+  font-family:'Outfit',sans-serif;font-weight:700;
+  background:#fff;border:1.5px solid var(--line);border-radius:8px;
+  padding:9px 15px;display:inline-block;margin:5px 0;
+}
+
+.astuce{
+  margin-top:14px;
+  background:#EDF7F1;border-left:3px solid var(--vert);
+  border-radius:0 10px 10px 0;padding:12px 16px;font-size:.94rem;
+}
+.astuce strong{color:var(--vert)}
+
+.exo{
+  border:1.5px solid var(--line);border-radius:10px;
+  padding:15px 17px;margin-bottom:13px;background:#fff;
+}
+.exo .exo-num{
+  font-family:'Caveat',cursive;font-size:1.2rem;color:var(--marge);font-weight:700;
+}
+.exo p{margin:4px 0 0}
+
+details{margin-top:11px}
+summary{
+  cursor:pointer;list-style:none;display:inline-block;
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:.88rem;
+  color:var(--ink);background:var(--fluo);
+  border:1.5px solid var(--ink);border-radius:6px;
+  padding:6px 13px;user-select:none;
+  transition:transform .12s;
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{transform:translateY(-1px)}
+details[open] summary{background:var(--paper-soft);color:var(--ink-soft)}
+.solution{
+  margin-top:11px;padding:13px 15px;
+  background:#EDF7F1;border-left:4px solid var(--vert);
+  border-radius:0 8px 8px 0;font-size:.94rem;
+}
+.solution p{margin-bottom:7px}
+.solution p:last-child{margin-bottom:0}
+.solution strong{color:var(--vert)}
+
+.haut{
+  display:inline-block;margin:4px 0 30px;
+  font-size:.88rem;color:var(--bic);text-decoration:none;font-weight:700;
+}
+.haut:hover{text-decoration:underline}
+
+/* ============ Accueil : cartes de niveaux ============ */
+.niveaux-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.niveau-card{
+  display:block;text-align:left;width:100%;
+  border:1.5px solid var(--line);border-radius:12px;
+  padding:22px;background:var(--paper-soft);cursor:pointer;
+  font-family:inherit;color:var(--ink);
+  transition:border-color .15s, transform .15s, box-shadow .15s;
+}
+.niveau-card:hover{
+  border-color:var(--ink);transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(28,43,74,.08);
+}
+.niveau-card .num{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--marge)}
+.niveau-card h3{font-size:1.15rem;margin:2px 0 6px}
+.niveau-card p{font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+.niveau-card .go{display:inline-block;margin-top:12px;font-weight:700;color:var(--bic);font-size:.9rem}
+
+/* ============ Page conseils ============ */
+.conseil-card{
+  border:1.5px solid var(--line);border-radius:12px;
+  padding:22px 24px;margin-bottom:20px;background:var(--paper);
+}
+.conseil-card h2{font-size:1.15rem;margin-bottom:10px}
+.conseil-card h2 .ico{margin-right:8px}
+.conseil-card p{margin-bottom:9px}
+.conseil-card p:last-child{margin-bottom:0}
+.conseil-card ul{margin:6px 0 6px 20px}
+.conseil-card li{margin-bottom:6px}
+
+/* ============ Footer ============ */
+footer{
+  border-top:1px solid var(--line);
+  padding:22px 0 46px;font-size:.88rem;color:var(--ink-soft);
+}
+footer .hand{font-size:1.15rem;color:var(--ink)}
+
+/* ============ Responsive ============ */
+@media (max-width:860px){
+  .topbar{padding:10px 18px}
+  .brand{font-size:1.05rem}
+  .menu{right:14px}
+  .sommaire ol{columns:1}
+  .niveaux-grid{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+  .chapitre{padding:20px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   Extension "vrais cours" : blocs structurés de polycopié
+   ============================================================ */
+
+.blk{
+  border-radius:0 10px 10px 0;
+  padding:14px 18px;
+  margin:14px 0;
+}
+.blk .blk-label{
+  display:inline-block;
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:2px 10px;border-radius:20px;margin-bottom:8px;
+  border:1.5px solid currentColor;
+}
+.blk p{margin-bottom:8px}
+.blk p:last-child{margin-bottom:0}
+.blk ul,.blk ol{margin:6px 0 8px 20px}
+.blk li{margin-bottom:5px}
+
+.definition{background:var(--paper-soft);border-left:3px solid var(--bic)}
+.definition .blk-label{color:var(--bic)}
+
+.theoreme{background:#FFF7F5;border-left:3px solid var(--marge)}
+.theoreme .blk-label{color:var(--marge)}
+
+.exemple{background:#fff;border:1.5px solid var(--line);border-left:3px solid var(--ink);border-radius:10px}
+.exemple .blk-label{color:var(--ink)}
+
+.methode{background:#EDF7F1;border-left:3px solid var(--vert)}
+.methode .blk-label{color:var(--vert)}
+
+.remarque{background:#FFFDF0;border-left:3px solid #D4A900}
+.remarque .blk-label{color:#A88600}
+
+.sous-titre{
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;
+  margin:26px 0 8px;padding-bottom:5px;
+  border-bottom:2px solid var(--fluo);
+  display:inline-block;
+}
+
+/* Sidebar : sommaire de chapitres */
+.sidebar nav a .num-ch{
+  display:inline-block;width:28px;
+  font-family:'Caveat',cursive;font-size:1.05rem;color:var(--marge);
+}
+.sidebar nav .sep{
+  margin:12px 0 8px;font-size:.72rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);
+  padding-left:12px;
+}
+
+/* Navigation bas de chapitre */
+.chap-nav{
+  display:flex;justify-content:space-between;gap:14px;
+  margin:6px 0 40px;
+}
+.chap-nav a{
+  text-decoration:none;font-weight:700;font-size:.92rem;color:var(--bic);
+  border:1.5px solid var(--line);border-radius:8px;padding:10px 16px;
+  transition:border-color .15s, transform .15s;
+}
+.chap-nav a:hover{border-color:var(--ink);transform:translateY(-2px)}

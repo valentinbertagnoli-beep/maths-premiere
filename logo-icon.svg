@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Logo Valentin Maths">
+  <defs>
+    <clipPath id="tile"><rect x="0" y="0" width="512" height="512" rx="112"/></clipPath>
+  </defs>
+
+  <!-- Tuile blanche -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#FFFFFF"/>
+
+  <!-- Cahier : quadrillage + marge rouge, clippés dans la tuile -->
+  <g clip-path="url(#tile)">
+    <g stroke="#D3E3F2" stroke-width="2">
+      <line x1="42" y1="0" x2="42" y2="512" />
+      <line x1="84" y1="0" x2="84" y2="512" />
+      <line x1="126" y1="0" x2="126" y2="512" />
+      <line x1="168" y1="0" x2="168" y2="512" />
+      <line x1="210" y1="0" x2="210" y2="512" />
+      <line x1="252" y1="0" x2="252" y2="512" />
+      <line x1="294" y1="0" x2="294" y2="512" />
+      <line x1="336" y1="0" x2="336" y2="512" />
+      <line x1="378" y1="0" x2="378" y2="512" />
+      <line x1="420" y1="0" x2="420" y2="512" />
+      <line x1="462" y1="0" x2="462" y2="512" />
+      <line x1="504" y1="0" x2="504" y2="512" />
+      <line x1="0" y1="42" x2="512" y2="42" />
+      <line x1="0" y1="84" x2="512" y2="84" />
+      <line x1="0" y1="126" x2="512" y2="126" />
+      <line x1="0" y1="168" x2="512" y2="168" />
+      <line x1="0" y1="210" x2="512" y2="210" />
+      <line x1="0" y1="252" x2="512" y2="252" />
+      <line x1="0" y1="294" x2="512" y2="294" />
+      <line x1="0" y1="336" x2="512" y2="336" />
+      <line x1="0" y1="378" x2="512" y2="378" />
+      <line x1="0" y1="420" x2="512" y2="420" />
+      <line x1="0" y1="462" x2="512" y2="462" />
+      <line x1="0" y1="504" x2="512" y2="504" />
+    </g>
+    <line x1="104" y1="0" x2="104" y2="512" stroke="#E4452F" stroke-width="5" opacity="0.55"/>
+  </g>
+
+  <!-- Coup de surligneur jaune -->
+  <rect x="150" y="300" width="216" height="48" rx="24" fill="#FFF06B" opacity="0.9"
+        transform="rotate(-10 258 324)"/>
+
+  <!-- Le « V » qui est aussi un radical √ -->
+  <path d="M 126 296 L 156 282 L 236 398 L 330 150 L 430 150"
+        fill="none" stroke="#2B50C8" stroke-width="38"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Coche verte « correct ✓ » -->
+  <path d="M 352 360 L 374 384 L 418 330"
+        fill="none" stroke="#2FA36B" stroke-width="20"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Contour discret de la tuile (visible sur fond blanc) -->
+  <rect x="1.5" y="1.5" width="509" height="509" rx="110.5"
+        fill="none" stroke="#E2E6EE" stroke-width="3"/>
+
+</svg>
