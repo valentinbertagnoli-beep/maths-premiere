@@ -1,0 +1,47 @@
+═══════════════════════════════════════════════════
+  VALENTIN·MATHS — Première spé maths (cours complet)
+═══════════════════════════════════════════════════
+
+COMMENT L'OUVRIR
+----------------
+1. Garde TOUS les fichiers de ce dossier ensemble (index.html, style.css,
+   logo-icon.svg, logo-icon-180.png).
+2. Double-clique sur "index.html" : le cours s'ouvre dans ton navigateur.
+3. Aucune installation, aucune connexion internet nécessaire.
+
+   • Mac     : double-clic, ou clic droit > Ouvrir avec > Safari/Chrome
+   • Windows : double-clic, ou clic droit > Ouvrir avec > Edge/Chrome
+
+NAVIGATION
+----------
+Clique sur le bouton ☰ (les trois barres, en haut à droite) pour ouvrir
+le menu et accéder à n'importe quel chapitre. Le logo en haut à gauche
+ramène toujours à l'accueil.
+
+CE QU'IL CONTIENT
+-----------------
+Les 10 chapitres du programme de spécialité, en version cours complet :
+
+  Analyse      1. Suites numériques         4. Applications de la dérivée
+               2. Le second degré           5. Fonction exponentielle
+               3. Dérivation                6. Fonctions trigonométriques
+  Géométrie    7. Produit scalaire          8. Géométrie repérée
+  Probabilités 9. Probabilités conditionnelles
+               10. Variables aléatoires
+  + une page Conseils (méthode, DS, préparation de la terminale)
+
+CODE COULEUR DU COURS
+---------------------
+  BLEU   = Définitions (à connaître mot pour mot)
+  ROUGE  = Théorèmes & propriétés (à citer avec leurs hypothèses)
+  ENCADRÉ= Exemples rédigés (tes modèles de copie)
+  VERT   = Méthodes pas-à-pas
+  JAUNE  = Remarques & pièges classiques
+
+Chaque chapitre se termine par des exercices : fais-les AU BROUILLON
+sans regarder la solution, puis déplie la correction et COMPARE.
+
+Bon courage — les maths ne sont pas un don, c'est un sport :
+ça s'entraîne. 💪
+
+© 2026 Valentin · Document à usage pédagogique
